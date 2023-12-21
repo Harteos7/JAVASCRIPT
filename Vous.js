@@ -47,23 +47,27 @@ function onKeyDown(event) {
   // Efface le bonhomme
   ctx.clearRect(bonhomme.x, bonhomme.y, bonhomme.width, bonhomme.height);
 
-  switch (event.keyCode) {
-    case 38: // flèche du haut
+  switch (event.key) {
+    case "ArrowUp":
+    case "z":
       if (bonhomme.y > 0) { 
         bonhomme.y -= speed;
       }
       break;
-    case 40: // flèche du bas
+    case "ArrowDown":
+    case "s":
       if (bonhomme.y < (canvas.height - bonhomme.height)) { 
         bonhomme.y += speed;
       }
       break;
-    case 37: // flèche de la gauche
+    case "ArrowLeft":
+    case "q":
       if (bonhomme.x > 0) { 
         bonhomme.x -= speed;
       }
       break;
-    case 39: // flèche de la droite
+    case "ArrowRight":
+    case "d":
       if (bonhomme.x < (canvas.width - bonhomme.width)) { 
         bonhomme.x += speed;
       }
